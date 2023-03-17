@@ -1,18 +1,43 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <section>
+    <div>
+      <h1>Hello my name is Rodion Voinarovskyi.</h1>
+      <h2>And here you can see my works</h2>
+    </div>
+    <ul>
+      <li v-for="item in portfolioItems" :key="item.id">
+        <a :href="item.url" target="_blank">{{ item.title }}</a>
+      </li>
+    </ul>
+  </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      portfolioItems: [
+        {
+          title: "Weather App",
+          url: "https://weather-app-43602.web.app/",
+        },
+        {
+          title: "To Do App",
+          url: "https://vue-todo-362bb.web.app/",
+        },
+        {
+          title: "Meals Library App",
+          url: "https://meal-library.web.app/",
+        },
+        {
+          title: "Adventure Notes App",
+          url: "https://adventure-notes.web.app/",
+        },
+      ],
+    };
+  },
+};
+</script>
 
 <style scoped>
 .logo {
